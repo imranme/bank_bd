@@ -17,7 +17,7 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'account_type', 'birth_date','gender', 'postal_code', 'city','country', 'street_address']
 
-def save(self, commit=True):
+    def save(self, commit=True):
         our_user = super().save(commit=False) # ami database e data save korbo na ekhn
         if commit == True:
             our_user.save() # user model e data save korlam
@@ -45,7 +45,7 @@ def save(self, commit=True):
             )
         return our_user
 
-def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
         for field in self.fields:
@@ -59,6 +59,7 @@ def __init__(self, *args, **kwargs):
                 ) 
             })
 
+  
 # profile ki ki jinis update korte parbe amader user
 
 class UserUpdateForm(forms.ModelForm):
