@@ -25,7 +25,7 @@ class TransactionCreateMixin(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({
-            'account': self.request.user.account
+            'account': self.request.user.account,
         })
         return kwargs
 
@@ -118,7 +118,7 @@ class TransactionReportView(LoginRequiredMixin, ListView):
     
     def get_queryset(self):
         queryset = super().get_queryset().filter(
-            account=self.request.user.account
+            account=self.request.user.account,
         )
         start_date_str = self.request.GET.get('start_date')
         end_date_str = self.request.GET.get('end_date')
