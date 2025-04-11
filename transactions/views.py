@@ -11,6 +11,7 @@ from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from datetime import datetime
 from django.db.models import Sum
+
 from transactions.forms import (
     DepositForm,
     WithdrawForm,
@@ -36,7 +37,7 @@ class TransactionCreateMixin(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs.update({
-            'account': self.request.user.account,
+            'account': self.request.user.account
         })
         return kwargs
 
