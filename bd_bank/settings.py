@@ -45,14 +45,8 @@ INSTALLED_APPS = [
     'accounts',
     'core',
     'transactions',
-    "crispy_forms",
-    "crispy_bootstrap5",
     'django.contrib.humanize',
 ]
-
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
-CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,7 +63,7 @@ ROOT_URLCONF = 'bd_bank.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates',],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
