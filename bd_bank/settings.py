@@ -25,7 +25,7 @@ SECRET_KEY = env("SECRET_KEY")
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-(8_so@60il(s+i(^f5*)02wo*-qr(^_-433*oc3n!jm498)!_n'
+SECRET_KEY = 'django-insecure-(8_so@60il(s+i(^f5*)02wo*-qr(^_-433*oc3n!jm498)!_n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'accounts',
     'core',
     'transactions',
-    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'bd_bank.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': env("DB_NAME"),
         'USER': env("DB_USER"),
         'PASSWORD': env("DB_PASSWORD"),

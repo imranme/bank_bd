@@ -26,10 +26,10 @@ class UserLoginView(LoginView):
         return reverse_lazy('home')
 
 # class UserLogoutView(LogoutView):
-#     def get_success_url(self):
+#     def get_success_url(self, request):
 #         if self.request.user.is_authenticated:
-#             logout(self.request)
-#         return reverse_lazy('home')
+#             logout(request)
+#         return redirect('home')
 
 class UserLogoutView(View):
     def get(self,request):
