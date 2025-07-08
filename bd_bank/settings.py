@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'bd_bank.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://bdbank_user:e8jHaJ73QjaOgGyx68vkDUVTqnHX7wdz@dpg-ctdoikaj1k6c73ds4qf0-a.oregon-postgres.render.com:5432/bdbank?sslmode=require',
+        default='postgresql://bdbank_user:e8jHaJ73QjaOgGyx68vkDUVTqnHX7wdz@dpg-ctdoikaj1k6c73ds4qf0-a.oregon-postgres.render.com:5432/bdbank',
         conn_max_age=600,
         ssl_require=True
     )
@@ -143,8 +143,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
