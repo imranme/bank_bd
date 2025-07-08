@@ -103,9 +103,9 @@ WSGI_APPLICATION = 'bd_bank.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://bdbank_user:e8jHaJ73QjaOgGyx68vkDUVTqnHX7wdz@dpg-ctdoikaj1k6c73ds4qf0-a.oregon-postgres.render.com/bdbank',
-        
+        default='postgresql://bdbank_user:e8jHaJ73QjaOgGyx68vkDUVTqnHX7wdz@dpg-ctdoikaj1k6c73ds4qf0-a.oregon-postgres.render.com:5432/bdbank?sslmode=require',
+        conn_max_age=600,
+        ssl_require=True
     )
 }
 
