@@ -83,3 +83,11 @@ wadllib
 xdg
 xkit
 zipp
+Django>=4.2,<5.1
+gunicorn
+psycopg2-binary
+dj-database-url
+django-environ
+djangorestframework
+crispy-bootstrap5
+django-crispy-forms
